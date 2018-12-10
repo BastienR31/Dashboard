@@ -1,0 +1,18 @@
+	<div class="float-right">
+		<ul class="navbar-nav ml-md-auto d-md-flex pr-3">
+			<li class="nav-item" *ngIf="isAuth">
+				<a class="nav-link" href="#">{{ emailUser }} - {{ nameUser }}
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active" *ngIf="!isAuth">
+				<a class="nav-link" routerLink="auth/signup"><fa-icon [icon]="faUserCircle" title="Login"></fa-icon>Create an account</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active" *ngIf="!isAuth">
+				<a class="nav-link" routerLink="auth/signin"><fa-icon [icon]="faSignInAlt" title="Login"></fa-icon>Login</a>
+			</li>
+			<li class="nav-item" *ngIf="isAuth" routerLinkActive="active">
+				<a class="nav-link" mat-list-item (click)="onSignOut()" style="cursor:pointer"><fa-icon [icon]="faSignOutAlt" title="Logout"></fa-icon>Logout</a>
+			</li>
+		</ul>
+  </div>

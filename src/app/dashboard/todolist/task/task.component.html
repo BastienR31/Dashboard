@@ -1,0 +1,11 @@
+	
+	<div>
+		<h1 appUpdateTask name="nameTask">{{ task.name }}</h1>
+		<p appUpdateTask name="dateTask">{{ task.date }}</p>
+		<p appUpdateTask name="descriptionTask">{{ task.description }}</p>
+		<p>{{ task.idList }}</p>
+		
+		<button class="btn btn-success" (click)="updateTask()">Update</button>
+		<button class="btn btn-default" (click)="onBack()">Return</button>
+	</div>
+	

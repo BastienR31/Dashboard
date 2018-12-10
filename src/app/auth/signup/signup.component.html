@@ -1,0 +1,62 @@
+	
+<div class="container-fluid pt-3">
+	<h2>Create an account</h2>
+	
+	<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+		<h4>Personal Information</h4>
+		<hr/>
+		<div class="form-group row">
+			<label for="username" class="col-sm-2 col-form-label">Username</label>
+			<div class="col-sm-10">
+				<input type="text" id="username" class="form-control" formControlName="username" placeholder="toto1234"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="firstname" class="col-sm-2 col-form-label">First Name</label>
+			<div class="col-sm-10">
+				<input type="text" id="firstname" class="form-control" formControlName="firstname" placeholder="John"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="lastname" class="col-sm-2 col-form-label">Last Name</label>
+			<div class="col-sm-10">
+				<input type="text" id="lastname" class="form-control" formControlName="lastname" placeholder="Doe"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="phonenumber" class="col-sm-2 col-form-label">Phone Number</label>
+			<div class="col-sm-10">
+				<input type="text" id="phonenumber" class="form-control" formControlName="phonenumber" placeholder="0501020304"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="city" class="col-sm-2 col-form-label">City</label>
+			<div class="col-sm-10">
+				<input type="text" id="city" class="form-control" formControlName="city" placeholder="Toulouse"/>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="country" class="col-sm-2 col-form-label">Country</label>
+			<div class="col-sm-10">
+				<input type="text" id="country" class="form-control" formControlName="country" placeholder="France"/>
+			</div>
+		</div>
+		<h4>Account Information</h4>
+		<hr/>
+		<div class="form-group row">
+			<label for="email" class="col-sm-2 col-form-label">Email address</label>
+			<div class="col-sm-10">
+				<input type="text" id="email" class="form-control" formControlName="email"  placeholder="john.doe@gmail.com">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="password" class="col-sm-2 col-form-label">Password</label>
+			<div class="col-sm-10">
+				<input type="password" id="password" class="form-control" formControlName="password">
+			</div>
+		</div>
+		<button class="btn btn-primary" type="submit" [disabled]="signupForm.invalid">Create my account</button>
+	</form>
+	<p class="text-danger">{{ errorMessage }}</p>
+</div>
+	

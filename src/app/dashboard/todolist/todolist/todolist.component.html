@@ -1,0 +1,28 @@
+<div class="widget-background border rounded">
+	
+	<div class="row">
+		<div class="col-md-6">
+			<h2 class="text-info p-2"><b>My lists</b></h2>
+		</div>
+		<div class="col-md-6 title-widget">
+			<a class="float-right" href="#">
+				<fa-icon [icon]="faExpand" title="Open widget"></fa-icon>
+			</a>
+		</div>
+	</div>
+	<div class="row row-eq-height" >
+		<div class="d-flex p-2 bd-highlight" *ngFor="let list of lists; let i = index">
+			<div (click)="onViewList(i)" class="d-inline-flex">
+				{{ list.name }} - {{ list.date }} - {{ list.status }}
+			</div>
+			<div class="d-inline-flex">
+				<button class="btn btn-default" (click)="onDeleteList(list)">
+					<fa-icon [icon]="faTrash" title="delete"></fa-icon>
+				</button>
+			</div>
+		</div>
+		<div class="container mt-1">
+			<button class="btn btn-primary" (click)="onNewList()"><fa-icon [icon]="faPlusCircle" title="add"></fa-icon>Add a new list</button>
+		</div>
+	</div>
+</div>

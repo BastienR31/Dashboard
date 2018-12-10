@@ -1,0 +1,21 @@
+	
+		<h1>{{ list.name }}</h1>
+		<p>{{ list.date }}</p>
+		
+		<div class="d-flex p-2 bd-highlight" *ngFor="let task of tasks; let i = index">
+			<div (click)="onViewTask(task)" class="d-inline-flex">
+				{{ i }} - {{ task.name }} - {{ task.date }} - {{ task.status }} - {{ task.description }}
+			</div>
+			
+			<div class="d-inline-flex">
+				<button class="btn btn-default pull-right" (click)="onDeleteTask(task)">
+					<fa-icon [icon]="faTrash" title="delete"></fa-icon>
+				</button>
+			</div>
+		</div>
+		
+		<div class="mt-1">
+			<button class="btn btn-primary" (click)="onNewTask()">Add a new task</button>
+			<button class="btn btn-default" (click)="onBack()">Return</button>
+		</div>
+		

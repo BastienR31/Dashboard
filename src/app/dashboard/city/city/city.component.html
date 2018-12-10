@@ -1,0 +1,27 @@
+	
+	<div class="widget-background border rounded">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="text-info p-2"><b>City informations</b></h2>
+			</div>
+		</div>
+		<div class="row row-eq-height">
+			<div class="col-md-2" *ngFor="let weather of weathers; let i = index">
+				<button class="btn button-city btn-light" (click)="onViewCity(i)" *ngIf="i<5">
+					<h3 class="list-group-item-heading"> {{ weather.name }} 
+						<button class="btn btn-default pull-right" (click)="onDeleteCity(city)"><fa-icon [icon]="faTrashAlt" title="Delete city"></fa-icon></button>
+					</h3>
+					<p class="list-group-item-text">{{ weather.country }}</p>
+					<p class="list-group-item-text">{{ weather.timezone }}</p>
+					<p class="list-group-item-text">Température moyenne : {{ weather.temperature }}°C</p>
+					<p class="list-group-item-text">Température minimum : {{ weather.temperatureMinimum }}°C</p>
+					<p class="list-group-item-text">Température Maximum : {{ weather.temperatureMaximum }}°C</p>
+					<p class="list-group-item-text"><img src="http://openweathermap.org/img/w/{{ weather.weatherIcon }}.png" alt="weather icon"></p>
+				</button>
+			</div>
+		</div>
+		<div class="mt-1">
+			<button class="btn btn-default" (click)="onBack()">Return</button>
+		</div>
+	</div>
+	

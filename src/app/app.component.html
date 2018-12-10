@@ -1,0 +1,36 @@
+	
+	<ng-container>
+
+		<mat-sidenav-container>
+			
+			<mat-sidenav class="app-sidebar" #sidenav mode="mode.value" role="navigation" [(opened)]="opened">
+				
+				<button mat-button (click)="sidenav.toggle()" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				
+				<app-navbar></app-navbar>
+				
+			</mat-sidenav>
+				
+			<mat-sidenav-content role="main">
+
+        <header class="app-header header-top fixed-top navbar-expand-lg navbar-dark py-1 pl-5 bg-light">
+				  <mat-toolbar class="header-container" role="heading">
+            <div style="width: 100%;">
+              <button mat-button (click)="sidenav.toggle()"><fa-icon [icon]="faBars" title="Menu"></fa-icon></button>
+              <app-header></app-header>
+            </div>
+          </mat-toolbar>
+        </header>
+
+				<div class="container-fluid px-5 pt-5">
+					<router-outlet></router-outlet>
+				</div>
+
+				<mat-toolbar class="footer-container"><app-footer></app-footer></mat-toolbar>
+
+			</mat-sidenav-content>
+			
+		</mat-sidenav-container>
+			
+	</ng-container>
+	
